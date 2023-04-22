@@ -1,64 +1,137 @@
-# 1 - Binary Search Algorithm.
-def binarySearch(nums, target):
+####### 1 - Binary Search Algorithm.
 
-    # search space is nums[left…right]
-    (left, right) = (0, len(nums) - 1)
-
-    # loop till the search space is exhausted
-    while left <= right:
-
-        # find the mid-value in the search space and
-        # compares it with the target
-
-        mid = (left + right) // 2
-
-        # overflow can happen. Use:
-        # mid = left + (right - left) / 2
-        # mid = right - (right - left) // 2
-
-        # target is found
-        if target == nums[mid]:
-            return mid
-
-        # discard all elements in the right search space,
-        # including the middle element
-        elif target < nums[mid]:
-            right = mid - 1
-
-        # discard all elements in the left search space,
-        # including the middle element
-        else:
-            left = mid + 1
-
-    # `target` doesn't exist in the list
-    return -1
+# ---  ---  ---  ---  ---  ---  ---  ---
 
 
-def my_search_algo(nums, target):
-    left, right = 0, (len(nums)-1)
-    while left <= right:
-        print("searching")
-        mid = (left + right) // 2
-        if target == nums[mid]:
-            return mid
-        elif target < nums[mid]:
-            right = mid-1
-        else:
-            left = mid + 1
-    return -1
+# def my_search_algo(nums, target):
+#     left, right = 0, (len(nums)-1)
+#     while left <= right:
+#         print("searching")
+#         mid = (left + right) // 2
+#         if target == nums[mid]:
+#             return mid
+#         elif target < nums[mid]:
+#             right = mid-1
+#         else:
+#             left = mid + 1
+#     return -1
 
 
-print(my_search_algo([2, 5, 6, 8, 9, 10, 67, 138, 244, 512], 139))
+# print(my_search_algo([2, 5, 6, 8, 9, 10, 67, 138, 244, 512], 139))
+
+# ---  ---  ---  ---  ---  ---  ---  ---
+
+####### 1 - Binary Search Algorithm.
+
+# ---  ---  ---  ---  ---  ---  ---  ---
 
 
+# def my_search_algo(nums, target):
+#     left, right = 0, (len(nums)-1)
+#     while left <= right:
+#         print("searching")
+#         mid = (left + right) // 2
+#         if target == nums[mid]:
+#             return mid
+#         elif target < nums[mid]:
+#             right = mid-1
+#         else:
+#             left = mid + 1
+#     return -1
+
+
+# print(my_search_algo([2, 5, 6, 8, 9, 10, 67, 138, 244, 512], 139))
+
+# ---  ---  ---  ---  ---  ---  ---  ---
+
+from collections import deque
+ 
+ 
+# # A class to represent a graph object
+# class Graph:
+#     # Constructor
+#     def __init__(self, edges, n):
+ 
+#         # A list of lists to represent an adjacency list
+#         self.adjList = [[] for _ in range(n)]
+ 
+#         # add edges to the undirected graph
+#         for (src, dest) in edges:
+#             self.adjList[src].append(dest)
+#             self.adjList[dest].append(src)
+ 
+ 
+# Perform BFS on the graph starting from vertex `v`
+def BFS(graph, v, discovered):
+ 
+    # create a queue for doing BFS
+    q = deque()
+ 
+    # mark the source vertex as discovered
+    discovered[v] = True
+ 
+    # enqueue source vertex
+    q.append(v)
+ 
+    # loop till queue is empty
+    while q:
+ 
+        # dequeue front node and print it
+        v = q.popleft()
+        print(v, end=' ')
+ 
+        # do for every edge (v, u)
+        for u in graph.adjList[v]:
+            if not discovered[u]:
+                # mark it as discovered and enqueue it
+                discovered[u] = True
+                q.append(u)
+ 
+ 
 # if __name__ == '__main__':
+ 
+#     # List of graph edges as per the above diagram
+#     edges = [
+#         (1, 2), (1, 3), (1, 4), (2, 5), (2, 6), (5, 9),
+#         (5, 10), (4, 7), (4, 8), (7, 11), (7, 12)
+#         # vertex 0, 13, and 14 are single nodes
+#     ]
+ 
+#     # total number of nodes in the graph (labelled from 0 to 14)
+#     n = 15
+ 
+#     # build a graph from the given edges
+#     graph = Graph(edges, n)
+ 
+#     # to keep track of whether a vertex is discovered or not
+#     discovered = [False] * n
+ 
+#     # Perform BFS traversal from all undiscovered nodes to
+#     # cover all connected components of a graph
+#     for i in range(n):
+#         if not discovered[i]:
+#             # start BFS traversal from vertex i
+#             BFS(graph, i, discovered)
+ 
 
-#     nums = [2, 5, 6, 8, 9, 10]
-#     target = 5
+class Graph:
+    def __init__(self, edges, nodes):
+        
+    
 
-#     index = my_search_algo(nums, target)
 
-#     if index != -1:
-#         print('Element found at index', index)
-#     else:
-#         print('Element found not in the list')
+def validate_battlefield(field):
+
+    return True
+
+graph = {
+    "5" : ['3', '7'],
+    "3" : ['2', '4'], 
+    "7" : ['8'], 
+    "2": [],
+    '4' : ['8'],
+    "8" : []
+}
+
+
+
