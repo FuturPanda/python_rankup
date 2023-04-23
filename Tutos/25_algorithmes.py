@@ -135,3 +135,10 @@ graph = {
 
 
 
+# List of graph edges as per the above diagram
+    edges = [
+        (1, 2), (1, 3), (1, 4), (2, 5), (2, 6), (5, 9),
+        (5, 10), (4, 7), (4, 8), (7, 11), (7, 12)
+        # vertex 0, 13, and 14 are single nodes
+    ]
+ 
